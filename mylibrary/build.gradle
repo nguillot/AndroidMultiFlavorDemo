@@ -36,33 +36,7 @@ android {
     publishNonDefault true //publish all build variants, if you're interesting by only one use 'defaultPublishConfig'
 }
 
-apply plugin: 'android-unit-test'
-
-/**
- * https://github.com/JCAndKSolutions/android-unit-test
- * https://github.com/evant/android-studio-unit-test-plugin
- */
-androidUnitTest {
-    testReleaseBuildType false
-    downloadDependenciesSources true
-    downloadDependenciesJavadoc true
-    downloadTestDependenciesSources true
-    downloadTestDependenciesJavadoc true
-}
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-
-    testInternalFlavorCompile 'org.mockito:mockito-core:1+'
-    testInternalFlavorCompile 'com.google.dexmaker:dexmaker:1.0'
-    testInternalFlavorCompile 'com.google.dexmaker:dexmaker-mockito:1.0'
-    testInternalFlavorCompile 'junit:junit:4.11'
-    testInternalFlavorCompile 'org.robolectric:robolectric:2.4'
-
-    testCustomer1FlavorCompile 'org.mockito:mockito-core:1+'
-    testCustomer1FlavorCompile 'com.google.dexmaker:dexmaker:1.0'
-    testCustomer1FlavorCompile 'com.google.dexmaker:dexmaker-mockito:1.0'
-    testCustomer1FlavorCompile 'junit:junit:4.11'
-    testCustomer1FlavorCompile 'org.robolectric:robolectric:2.4'
 }
